@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <title>摇一摇 - 云顶年会</title>
+    <style>
+        body {
+            background-color: #e84042;
+            text-align: center;
+        }
+    </style>
+    <script type="text/javascript">
+        BACKEND = 'http://192.168.1.138:3000/';
+    </script>
+</head>
+<body>
+<script type="text/javascript" src="bower_components/socket.io-client/socket.io.js"></script>
+<script type="text/javascript">
+    var ua = navigator.userAgent.toLowerCase();
+    if (true || ua.indexOf('micromessenger') > -1) {
+        var socket = io.connect(BACKEND);
+        socket.emit('register', {userid: 3, name: 'zhangnan111', avatar: "http://wx.qlogo.cn/mmopen/ajNVdqHZLLA3WJ6DSZUfiakYe37PKnQhBIeOQBO4czqrnZDS79FH5Wm5m4X69TBicnHFlhiafvDwklOpZeXYQQ2icg/0"});
+        socket.emit('shake', {userid: 3});
+        document.body.innerHTML = '<img width="280px" src="img/shake-bg.png" style="margin-top:20px;margin-bottom:40px"/><div style="font-size:12px;color:white;">技术支持: 小楠科技</div>';
+        var color = new Array('#fff', '#ff0', '#f00', '#000', '#00f', '#0ff');
+        if (window.DeviceMotionEvent) {
+            var speed = 25;
+            var x = y = z = lastX = lastY = lastZ = 0;
+            window.addEventListener('devicemotion', function () {
+                var acceleration = event.accelerationIncludingGravity;
+                x = acceleration.x;
+                y = acceleration.y;
+                if (Math.abs(x - lastX) > speed || Math.abs(y - lastY) > speed) {
+                    socket.emit('shake', {userid: 3});
+                }
+                lastX = x;
+                lastY = y;
+            }, false);
+        }
+    }
+</script>
+</body>
+</html>
