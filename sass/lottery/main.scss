@@ -1,0 +1,142 @@
+@import '../variables';
+
+a i {
+  color: white;
+}
+
+.header {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: white;
+
+  & .title {
+    height: 100px;
+    line-height: 100px;
+    font-size: 42px;
+
+    & small {
+      position: absolute;
+      top: 34px;
+      left: 140px;
+      color: white;
+      font-size: 14px;
+
+      & a {
+        color: white;
+      }
+    }
+  }
+
+  & .hudong {
+    background: url(../../img/sc_bg.png) center 0 no-repeat;
+    height: 100px;
+    font-size: 20px;
+    text-align: center;
+    padding-top: 20px;
+  }
+
+  & .powerby {
+    height: 100px;
+    line-height: 100px;
+    text-align: right;
+  }
+}
+
+.bingo, .result {
+  height: 450px;
+  /*border: 1px solid #ddd;*/
+  padding: 30px 60px;
+  box-shadow: 0 0 10px rgba(245, 188, 110, 1);
+}
+
+.bingo {
+  background-color: #e74145;
+  color: white;
+
+  & .guy {
+    text-align: center;
+
+    & .nickname {
+      min-height: 42px;
+      font-size: 20px;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+  }
+
+  & .action {
+    position: absolute;
+    top: 370px;
+    left: 330px;
+  }
+}
+
+.result {
+  background-color: wheat;
+  color: red;
+  overflow-y: auto;
+
+  & hr{
+    border-color: red;
+  }
+
+  & h4 {
+    text-align: center;
+  }
+
+  & ul li {
+    height: 60px;
+    line-height: 60px;
+
+    & i{
+      color: red;
+    }
+  }
+
+  & .action {
+    position: absolute;
+    top: 370px;
+    left: 160px;
+  }
+
+  & div.name {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+  }
+}
+
+.users {
+  margin-top: 30px;
+
+  & span.name {
+    color: white;
+  }
+  & h4 {
+    color: white;
+  }
+  & kbd {
+    color: white;
+    background-color: red;
+  }
+  & ul {
+    margin-top: 10px;
+  }
+  & li {
+    height: 30px;
+
+    & a i {
+      font-size: 12px;
+      color: white;
+    }
+  }
+
+}
+
+.guy img {
+  width: 250px;
+  height: 250px;
+  border: 3px solid rgba(255, 255, 255, .2);
+
+  border-radius: 250px 250px 250px 250px;
+}

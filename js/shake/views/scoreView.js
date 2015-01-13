@@ -12,7 +12,10 @@ define(['jquery'
                     total += e.score;
                 });
                 $.each(topTen, function (i, e) {
-                    var _u = $($el.find('li.user_' + e.userid)[0] || '<li class="sort_' + i + ' user_' + e.userid + '"><img width="75px" src="' + e.avatar + '"/><span>' + e.name + '</span><i></i></li>');
+                    var userid = e.userid.replace('@', '_');
+                    var avatar = e.avatar || 'avatar/default.png';
+                    var name = e.name || e.userid;
+                    var _u = $($el.find('li.user_' + userid)[0] || '<li class="sort_' + i + ' user_' + userid + '"><img width="75px" src="' + avatar + '"/><span>' + name + '</span><i></i></li>');
                     _u.find('i').text( Math.floor(e.score*100/total) );
                     $el.append(_u);
                 });

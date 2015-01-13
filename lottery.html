@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>抽奖</title>
+    <link rel="stylesheet" href="css/lottery/main.css">
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css"/>
+    <link href="css/bootstrap-yeti.css" rel="stylesheet">
+    <script src="js/modernizr-2.6.2.min.js"></script>
+    <script type="text/javascript">
+        if (!window.localStorage) {
+            alert('This browser does NOT support localStorage');
+        }
+    </script>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <div class="row">
+            <div class="col-md-3 title">
+                <span>云顶科技年会</span>
+                <small><a href="wall.html">微信墙</a> <a href="shake.html">摇一摇</a> <a href="lottery.html">抽奖</a></small>
+            </div>
+            <div class="col-md-7 hudong">
+                <span>关注 云顶科技 企业号<br/>选择 "小二" 进行现场互动</span>
+            </div>
+            <div class="col-md-2 powerby">
+                <img src="img/qr.jpeg" height="100px"/>
+            </div>
+        </div>
+    </div>
+    <section class="row">
+        <section class="col-md-8">
+            <section class="bingo">
+                <div class="guy">
+                    <div class="nickname"></div>
+                    <img src="avatar/default.png"/>
+                </div>
+
+                <div class="action">
+                    <button class="start btn-warning btn btn-lg">开始抽奖</button>
+                    <button class="end btn-warning btn btn-lg">停止</button>
+                </div>
+            </section>
+        </section>
+        <section class="col-md-4">
+            <section class="result">
+                <h4>获奖名单</h4>
+                <hr/>
+                <ul class="list-unstyled">
+                </ul>
+                <div class="action">
+                    <button class="reset btn-danger btn">重置</button>
+                </div>
+            </section>
+        </section>
+    </section>
+    <section class="users">
+        <h4>参与人员 <a href="#" class="add"><i class="fa fa-plus"> </i></a></h4>
+        <hr/>
+        <ul class="list-inline list-unstyled">
+        </ul>
+    </section>
+</div>
+<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="bower_components/underscore/underscore-min.js"></script>
+<script data-main="js/lottery/main.js" src="bower_components/requirejs/require.js"></script>
+</body>
+</html>

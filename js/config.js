@@ -5,12 +5,17 @@ define(['localconfig'], function (localconfig) {
         'shake': {
             'interval': 500, //结果刷新间隔
             'period': 20 // 摇一摇游戏时间
+        },
+        'wall': {
+            'interval': 1000, //结果刷新间隔
+            'count': 5
         }
     }
 
     function Config() {
         this.backend = localconfig.backend || defaultSettings.backend;
         this.shake = localconfig.shake || defaultSettings.shake;
+        this.wall = localconfig.wall || defaultSettings.wall;
         return this;
     }
 

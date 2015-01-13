@@ -7,7 +7,10 @@ define(['jquery'
         return {
             draw: function (data) {
                 $.each(data, function (i, e) {
-                    $el.append( $($el.find('li.user_' + e.userid)[0] || '<li class="sort_' + i + ' user_' + e.userid + '"><img width="75px" src="' + e.avatar + '"/><span>' + e.name + '</span></li>') );
+                    var userid = e.userid.replace('@', '_');
+                    var avatar = e.avatar || 'avatar/default.png';
+                    var name = e.name || e.userid;
+                    $el.append( $($el.find('li.user_' + userid)[0] || '<li class="sort_' + i + ' user_' + userid + '"><img width="75px" src="' + avatar + '"/><span>' + name + '</span></li>') );
                 });
             },
             clear: function(){
