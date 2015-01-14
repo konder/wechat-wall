@@ -18,8 +18,10 @@ define(['config', 'jquery'
                     var userid = e.userid.replace('@', '_');
                     var avatar = e.author.avatar || 'avatar/default.png';
                     var name = e.author.name || e.userid;
+                    var content = e.content || '';
+                    var image = e.image || '';
 
-                    if (e.content.startWith('[匿名]')){
+                    if (content.startWith('[匿名]')){
                         avatar = 'avatar/default.png';
                         name = '匿名';
                     }
@@ -28,8 +30,8 @@ define(['config', 'jquery'
                             '<li class="user_' + userid + '">' +
                             '<div class="row">' +
                             '<div class="guy col-md-2"><img width="75px" src="' + avatar + '"/></div>' +
-                            '<div class="col-md-10"><span class="name">' + name + '</span><p>' + e.content + '</p>' +
-                                (e.image && '<img src="' + e.image +'"/>') +
+                            '<div class="col-md-10"><span class="name">' + name + '</span><p>' + content + '</p>' +
+                                (image ? '<img height="450px" src="' + image +'"/>' : '') +
                             '</div>' +
                             '</div>' +
                             '</li>'
