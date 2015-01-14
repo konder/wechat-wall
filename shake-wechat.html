@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <title>摇一摇 - 云顶年会</title>
+    <style>
+        body {
+            background-color: #e84042;
+            text-align: center;
+        }
+    </style>
+    <script type="text/javascript">
+        BACKEND = 'http://host:port/';
+    </script>
+</head>
+<body>
+<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="bower_components/socket.io-client/socket.io.js"></script>
+<script type="text/javascript">
+    function getQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]);
+        return null;
+    }
+
+    var userid = getQueryString('userid');
+    var ua = navigator.userAgent.toLowerCase();
+    if (ua.indexOf('micromessenger') > -1 || userid) {
+        var socket = io.connect(BACKEND);
+        document.body.innerHTML = '<img width="280px" src="img/shake-bg.png" style="margin-top:20px;margin-bottom:40px"/><div style="font-size:12px;color:white;">技术支持: 小楠科技</div>';
+        var color = new Array('#fff', '#ff0', '#f00', '#000', '#00f', '#0ff');
+        if (window.DeviceMotionEvent) {
+            var speed = 25;
+            var x = y = z = lastX = lastY = lastZ = 0;
+            window.addEventListener('devicemotion', function () {
+                var acceleration = event.accelerationIncludingGravity;
+                x = acceleration.x;
+                y = acceleration.y;
+                if (Math.abs(x - lastX) > speed || Math.abs(y - lastY) > speed) {
+                    socket.emit('shake', {userid: userid});
+                }
+                lastX = x;
+                lastY = y;
+            }, false);
+        }
+    }
+</script>
+</body>
+</html>
