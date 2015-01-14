@@ -29,6 +29,8 @@ define(['jquery'
                             '</div>' +
                         '</div>' +
                         '</li>');
+                    _u.find('div').text(name);
+                    _u.find('img').attr('src', avatar);
                     var per = Math.floor(e.score*100/total);
                     _u.find('div.progress-bar').attr('aria-valuenow', per).css('width', per +'%').text(per+'%');
                     $el.append(_u);
