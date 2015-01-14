@@ -7,6 +7,8 @@ define(['models/shake', 'shake/views/scoreView', 'shake/views/userView', '../uti
     var $users = $el.find('.users ul');
     var $score = $el.find('.score ul');
     var $timer = $el.find('.timer');
+    var $timer2 = $el.find('.timer2');
+    var $timerBg = $el.find('.bg');
 
     var shake = new Shake();
     var userView = new UserView($users);
@@ -23,12 +25,18 @@ define(['models/shake', 'shake/views/scoreView', 'shake/views/userView', '../uti
 
     var $startBtn = $('.action button.start');
     $startBtn.click(function () {
+        $users.show();
         scoreView.clear();
         $startBtn.toggle();
+        $timerBg.show();
 
         // 倒计时开始，时间到后再启动一个结束倒计时
         utils.countDown.run({
             finished: function () {
+                $users.hide();
+                //$('.score').css('display', 'none');
+
+                $timerBg.toggle();
                 // 正式开始，隐藏入口 -> 清空倒计时 -> 请求服务开始
                 $timer.empty();
                 shake.start();
@@ -52,7 +60,7 @@ define(['models/shake', 'shake/views/scoreView', 'shake/views/userView', '../uti
                         $startBtn.toggle();
                     },
                     every: function (countDownTime) {
-                        $timer.html(countDownTime);
+                        $timer2.html('结束倒计时: ' + countDownTime);
                     },
                     period: config.shake.period
                 });

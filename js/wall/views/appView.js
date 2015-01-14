@@ -28,14 +28,15 @@ define(['config', 'jquery'
                             '<li class="user_' + userid + '">' +
                             '<div class="row">' +
                             '<div class="guy col-md-2"><img width="75px" src="' + avatar + '"/></div>' +
-                            '<div class="col-md-10"><span class="name">' + name + '</span><p>' + e.content + '</p></div>' +
+                            '<div class="col-md-10"><span class="name">' + name + '</span><p>' + e.content + '</p>' +
+                                (e.image && '<img src="' + e.image +'"/>') +
+                            '</div>' +
                             '</div>' +
                             '</li>'
                     )
                     ;
                 });
                 $.each($el.find('li'), function (i, e) {
-                    console.log(i);
                     i >= config.wall.count && e.remove();
                 });
             }

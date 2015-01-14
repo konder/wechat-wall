@@ -40,7 +40,7 @@ define(['models/datasource', 'models/bingo', 'lottery/views/appView', '../utils'
         });
 
         $.each(dataSource.all(), function (index, element) {
-            $users.append($('<li>').append('<span class="name">' + element.nickname + '</span><a href="#" data-id="' + index + '"> <i class="fa fa-remove"> </i></a>'));
+            $users.append($('<li>').append('<img src="' + element.avatar + '" height="15px"/><span class="name">' + element.nickname + '</span><a href="#" data-id="' + index + '"> <i class="fa fa-remove"> </i></a>'));
         });
         $('.users li a').click(function () {
             dataSource.remove(parseInt($(this).data('id')));

@@ -6,7 +6,7 @@ define(['jquery'
     var ScoreView = function ($el) {
         return {
             draw: function (data) {
-                var topTen = data.slice(0, 10);
+                var topTen = data.slice(0, 7);
                 var total = 0;
                 $.each(topTen, function(i, e){
                     total += e.score;
@@ -15,8 +15,22 @@ define(['jquery'
                     var userid = e.userid.replace('@', '_');
                     var avatar = e.avatar || 'avatar/default.png';
                     var name = e.name || e.userid;
-                    var _u = $($el.find('li.user_' + userid)[0] || '<li class="sort_' + i + ' user_' + userid + '"><img width="75px" src="' + avatar + '"/><span>' + name + '</span><i></i></li>');
-                    _u.find('i').text( Math.floor(e.score*100/total) );
+                    var _u = $($el.find('li.user_' + userid)[0] || '<li class="sort_' + i + ' user_' + userid + '">' +
+                        '<div class="row">' +
+                            '<div class="col-md-2">' +
+                                i + '. '+
+                                '<img width="40px" src="' + avatar + '"/>' +
+                                '<span>' + name + '</span>' +
+                            '</div>' +
+                            '<div class="col-md-10" style="padding-top: 4px;">' +
+                                '<div class="progress">' +
+                                    '<div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>' +
+                                '</div>' +
+                            '</div>' +
+                        '</div>' +
+                        '</li>');
+                    var per = Math.floor(e.score*100/total);
+                    _u.find('div.progress-bar').attr('aria-valuenow', per).css('width', per +'%').text(per+'%');
                     $el.append(_u);
                 });
             },
