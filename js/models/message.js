@@ -10,7 +10,6 @@ define(['config', 'jquery'], function (config, $) {
                     url: config.backend + 'message',
                     dataType: "json",
                     success: function (data) {
-                        console.log(data);
                         _callBack(data);
                     }
                 });

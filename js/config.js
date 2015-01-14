@@ -7,8 +7,8 @@ define(['localconfig'], function (localconfig) {
             'period': 20 // 摇一摇游戏时间
         },
         'wall': {
-            'interval': 1000, //结果刷新间隔
-            'count': 5
+            'interval': 2000, //结果刷新间隔
+            'count': 3
         }
     }
 

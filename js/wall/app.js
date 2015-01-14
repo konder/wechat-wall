@@ -14,6 +14,6 @@ define(['models/message', 'wall/views/appView', '../utils', 'config', 'jquery'
         callback: function () {
             message.fetch(appView.draw);
         },
-        interval: 1000
+        interval: config.wall.interval
     });
 });
