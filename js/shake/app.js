@@ -52,6 +52,7 @@ define(['models/shake', 'shake/views/scoreView', 'shake/views/userView', '../uti
                 utils.countDown.run({
                     finished: function () {
                         // 结束, 清空倒计时 -> 请求服务结束 -> 显示入口
+                        $timerBg.hide();
                         $timer2.empty();
                         $timer.empty();
 
@@ -61,7 +62,14 @@ define(['models/shake', 'shake/views/scoreView', 'shake/views/userView', '../uti
                         $startBtn.toggle();
                     },
                     every: function (countDownTime) {
-                        $timer2.html('结束倒计时: ' + countDownTime);
+                        if (countDownTime < 7){
+                            $timerBg.show();
+                            $timer2.html('');
+                            $timer.html('结束倒计时: ' + countDownTime);
+                        }else{
+                            $timer2.html('结束倒计时: ' + countDownTime);
+                        }
+
                     },
                     period: config.shake.period
                 });

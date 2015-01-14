@@ -1,68 +1,68 @@
 @import '../variables';
 
-.message {
-  & li {
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 0 10px rgba(245, 188, 110, 1);
-    background-color: #FDEBEC;
-    color: #bf191d;
-
-    & p{
-      font-size: 40px
-    }
-
-    & .name{
-      font-size: 20px
-    }
-  }
-
-}
-
 .shake-wall{
   padding: 20px;
   text-align: center;
   box-shadow: 0 0 10px rgba(245, 188, 110, 1);
   background-color: #FDEBEC;
-  color: #bf191d;
-  min-height: 450px;
-}
+  color: $brand-important;
+  min-height: 500px;
 
-.timer2{
-  position: absolute;
-  font-size: 30px;
-  top: 140px;
-}
+  & .users {
+    & li {
+      font-size: 20px;
+      text-align: center;
+      margin: 10px;
 
-.score {
-  padding: 50px;
+      & img {
+        width: 120px;
+        height: 120px;
+        border: 3px solid rgba(255, 255, 255, .2);
 
-  & li {
-    font-size: 20px;
-    text-align: center;
-    margin: 10px;
-
-    & img {
-      border: 3px solid rgba(255, 255, 255, .2);
-
-      border-radius: 75px 75px 75px 75px;
+        border-radius: 120px 120px 120px 120px;
+      }
     }
   }
-}
-.users {
-  & li {
-    font-size: 20px;
-    text-align: center;
-    margin: 10px;
 
-    & img {
-      width: 120px;
-      height: 120px;
-      border: 3px solid rgba(255, 255, 255, .2);
+  & .score {
+    padding: 50px;
 
-      border-radius: 120px 120px 120px 120px;
+    & li {
+      font-size: 20px;
+      text-align: center;
+      margin: 10px;
+
+      & img {
+        border: 3px solid rgba(255, 255, 255, .2);
+
+        border-radius: 75px 75px 75px 75px;
+      }
+
+      & .progress{
+        height: 40px;
+        line-height: 40px;
+        margin-bottom: 0px;
+
+        & .progress-bar{
+          line-height: 40px;
+          font-size: 20px;
+        }
+      }
     }
   }
+
+  & .timer2{
+    position: absolute;
+    font-size: 30px;
+    top: 140px;
+  }
+
+  & .action{
+    position: absolute;
+    left: 45%;
+    top: 75%;
+  }
+
 }
 
 .bg{

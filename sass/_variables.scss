@@ -7,15 +7,15 @@
 //
 //## Gray and brand colors for use across Bootstrap.
 
+$gray:                   #6f6f6f;                    // #555
 $gray-base:              #000;
 $gray-darker:            lighten($gray-base, 13.5%); // #222
 $gray-dark:              lighten($gray-base, 20%);   // #333
-$gray:                   #6f6f6f; // #555
 $gray-light:             lighten($gray-base, 60%);   // #999
 $gray-lighter:           lighten($gray-base, 93.5%); // #eee
 
-$brand-important: #eca30e;
-$brand-primary: #1e8fd3;
+$brand-important:       #bf191d;
+$brand-primary:         #E99002;
 $brand-success:         #66cc33;
 $brand-info:            #5bc0de;
 $brand-warning:         #E99002;
@@ -24,7 +24,7 @@ $brand-danger:          #F04124;
 $border-gray:           #f7f7f7;
 $border-dark:           #eaeaea;
 
-$block-background:       #f9f9f9;
+$block-background:      #f9f9f9;
 
 
 //== Scaffolding
@@ -32,9 +32,9 @@ $block-background:       #f9f9f9;
 //## Settings for some of the most global styles.
 
 //** Background color for `<body>`.
-$body-bg:               #fff;
+$body-bg:               #bf191d;
 //** Global text color on `<body>`.
-$text-color:            #333;
+$text-color:            #ffffff;
 //$text-color:            $gray-darker;
 
 //** Global textual link color.

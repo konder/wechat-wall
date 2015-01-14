@@ -16,6 +16,7 @@ require.config({
         'bootstrap': "bower_components/bootstrap/dist/js/bootstrap.min",
         'underscore.string': "bower_components/underscore.string/lib/underscore.string",
         'lottery': "js/lottery",
+        'wall': 'js/wall',
         'models': "js/models",
         'utils': "js/utils",
         'config': "js/config",

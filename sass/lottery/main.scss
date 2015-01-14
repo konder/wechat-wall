@@ -12,7 +12,7 @@ a i {
 }
 
 .bingo {
-  background-color: #e74145;
+  background-color: $body-bg;
   color: white;
 
   & .guy {
@@ -31,15 +31,23 @@ a i {
     top: 370px;
     left: 330px;
   }
+
+  .guy img {
+    width: 250px;
+    height: 250px;
+    border: 3px solid rgba(255, 255, 255, .2);
+
+    border-radius: 250px 250px 250px 250px;
+  }
 }
 
 .result {
   background-color: wheat;
-  color: red;
+  color: $brand-important;
   overflow-y: auto;
 
   & hr{
-    border-color: red;
+    border-color: $brand-important;
   }
 
   & h4 {
@@ -51,7 +59,7 @@ a i {
     line-height: 60px;
 
     & i{
-      color: red;
+      color: $brand-important;
     }
   }
 
@@ -79,7 +87,7 @@ a i {
   }
   & kbd {
     color: white;
-    background-color: red;
+    background-color: $brand-important;
   }
   & ul {
     margin-top: 10px;
@@ -93,12 +101,4 @@ a i {
     }
   }
 
-}
-
-.guy img {
-  width: 250px;
-  height: 250px;
-  border: 3px solid rgba(255, 255, 255, .2);
-
-  border-radius: 250px 250px 250px 250px;
 }

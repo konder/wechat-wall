@@ -1,12 +1,12 @@
 @import '../variables';
 
-.message {
+.messages {
   & li {
     padding: 20px;
     margin-bottom: 20px;
     box-shadow: 0 0 10px rgba(245, 188, 110, 1);
     background-color: #FDEBEC;
-    color: #bf191d;
+    color: $brand-important;
 
     & p{
       font-size: 40px
@@ -15,14 +15,14 @@
     & .name{
       font-size: 20px
     }
+
+    .guy img {
+      width: 120px;
+      height: 120px;
+      border: 3px solid rgba(255, 255, 255, .2);
+
+      border-radius: 120px 120px 120px 120px;
+    }
   }
-
 }
 
-.guy img {
-  width: 120px;
-  height: 120px;
-  border: 3px solid rgba(255, 255, 255, .2);
-
-  border-radius: 120px 120px 120px 120px;
-}
