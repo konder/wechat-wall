@@ -18,7 +18,6 @@ define(['jquery'
                     var _u = $($el.find('li.user_' + userid)[0] || '<li class="sort_' + i + ' user_' + userid + '">' +
                         '<div class="row">' +
                             '<div class="col-md-2">' +
-                                i + '. '+
                                 '<img width="40px" src="' + avatar + '"/>' +
                                 '<span>' + name + '</span>' +
                             '</div>' +
