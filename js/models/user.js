@@ -23,6 +23,7 @@ define(['config', 'jquery'], function (config, $) {
 
         return {
             clearLuckyGuy: function () {
+                //_black.push(_getFromStorage('award'));
                 _setByStorage('award', []);
             },
             addLuckyGuy: function (guy) {
@@ -42,11 +43,7 @@ define(['config', 'jquery'], function (config, $) {
                 return guy;
             },
             getLuckGuys: function () {
-                var guys = _getFromStorage('award') || [];
-                if (!_black) {
-                    _black.push(guys);
-                }
-                return guys;
+                return _getFromStorage('award') || [];
             },
             removeLuckGuy: function (id) {
                 var guys = _getFromStorage('award') || [];
@@ -95,8 +92,7 @@ define(['config', 'jquery'], function (config, $) {
             }, getBlack: function () {
                 console.log(_black);
                 return _black;
-            }, addBlack: function (index) {
-                var guy = _arr[index];
+            }, addBlackGuy: function (guy) {
                 _black.push(guy);
             }
 

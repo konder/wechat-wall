@@ -11,13 +11,15 @@ define(['models/user', 'models/bingo', 'models/message', 'lottery/views/appView'
     var $blacklist = $el.find('.blacklist ul');
     var $hudong = $el.find('.header .hudong');
 
+
+    var updateUser = true;
     var user = new User();
     // TODO
     $.each(user.getLuckGuys(), function (i, e) {
         $.each(user.all(), function (ai, ae) {
             if (ae && e.openid == ae.openid) {
-                user.addBlack(ai);
-                user.remove(ai);
+                //user.addBlack(ai.id);
+                user.remove(ai.id);
                 return;
             }
         });
@@ -27,8 +29,10 @@ define(['models/user', 'models/bingo', 'models/message', 'lottery/views/appView'
     utils.thread.run({
         callback: function () {
             message.fetch(wallView.drawOne);
-            user.update();
-            loadAwards();
+            if (updateUser) {
+                user.update();
+                loadAwards();
+            }
         },
         interval: config.wall.interval
     });
@@ -86,6 +90,7 @@ define(['models/user', 'models/bingo', 'models/message', 'lottery/views/appView'
     $endBtn.hide();
 
     $startBtn.click(function () {
+        updateUser = false;
         bingo.start();
         $startBtn.toggle();
         $endBtn.toggle();
@@ -103,18 +108,25 @@ define(['models/user', 'models/bingo', 'models/message', 'lottery/views/appView'
     });
 
     $('.users a.add').click(function () {
-        var nickname = prompt('输入姓名');
-        if (nickname) {
-            var guy = {nickname: nickname, avatar: 'avatar/default.png'};
-            $.each(user.all(), function (i, e) {
-                if (e.nickname == nickname) {
-                    guy.avatar = e.avatar;
-                    return;
-                }
-            });
-            user.add(guy);
+        //var nickname = prompt('输入姓名');
+        //if (nickname) {
+        //    var guy = {nickname: nickname, avatar: 'avatar/default.png'};
+        //    $.each(user.all(), function (i, e) {
+        //        if (e.nickname == nickname) {
+        //            guy.avatar = e.avatar;
+        //            return;
+        //        }
+        //    });
+        //    user.add(guy);
+        //}
+        //loadAwards();
+        if (!updateUser) {
+            user.update();
+            loadAwards();
+        } else {
+            updateUser = false;
+            alert("停止自动更新.");
         }
-        loadAwards();
     });
 
     loadAwards();

@@ -1,6 +1,6 @@
 define(function () {
     return {
-        backend: "http://127.0.0.1:3001/",
+        backend: "http://nianhui.lngtop.com/api/",
         'shake': {
             'interval': 2000,
             'period': 20
