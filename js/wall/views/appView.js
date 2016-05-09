@@ -15,7 +15,7 @@ define(['config', 'jquery'
         return {
             drawOne: function (data) {
                 $.each(data.slice(0, 1), function (i, e) {
-                    var userid = e.userid.replace('@', '_');
+                    var userid = e.userid || e.id;
                     var avatar = e.author.avatar || 'avatar/default.png';
                     var name = e.author.name || e.userid;
                     var content = e.content || '';
@@ -38,8 +38,10 @@ define(['config', 'jquery'
                 });
             },
             draw: function (data) {
+                console.log(data);
                 $.each(data.slice(0, 5), function (i, e) {
-                    var userid = e.userid.replace('@', '_');
+                    console.log(e);
+                    var userid = e.userid || e.id;
                     var avatar = e.author.avatar || 'avatar/default.png';
                     var name = e.author.name || e.userid;
                     var content = e.content || '';

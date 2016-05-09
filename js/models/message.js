@@ -8,9 +8,12 @@ define(['config', 'jquery'], function (config, $) {
                 $.ajax({
                     type: 'GET',
                     url: config.backend + 'message',
-                    dataType: "json",
+                    dataType: "jsonp",
                     success: function (data) {
                         _callBack(data);
+                    },
+                    error: function(e){
+                        console.log(e);
                     }
                 });
             }

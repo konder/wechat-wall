@@ -1,0 +1,39 @@
+/*$progress-bg:                 #f5f5f5;*/
+.header {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: white; }
+  .header .title {
+    height: 100px;
+    line-height: 100px;
+    font-size: 42px; }
+    .header .title small {
+      position: absolute;
+      top: 34px;
+      left: 140px;
+      color: white;
+      font-size: 14px; }
+      .header .title small a {
+        color: white; }
+  .header .hudong {
+    background: url(../img/sc_bg.png) center 0 no-repeat;
+    height: 100px;
+    font-size: 20px;
+    text-align: center;
+    padding-top: 20px; }
+    .header .hudong .message {
+      margin-top: -10px;
+      text-align: left; }
+      .header .hudong .message p {
+        font-size: 30px; }
+  .header .powerby {
+    height: 100px;
+    line-height: 100px;
+    text-align: right; }
+  .header .guy img {
+    width: 75px;
+    height: 75px;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    border-radius: 75px 75px 75px 75px; }
+
+/*# sourceMappingURL=main.css.map */

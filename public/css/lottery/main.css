@@ -1,0 +1,70 @@
+/*$progress-bg:                 #f5f5f5;*/
+a i {
+  color: white; }
+
+.bingo, .result {
+  height: 450px;
+  /*border: 1px solid #ddd;*/
+  padding: 30px 60px;
+  box-shadow: 0 0 10px #f5bc6e; }
+
+.bingo {
+  background-color: #bf191d;
+  color: white; }
+  .bingo .guy {
+    text-align: center; }
+    .bingo .guy .nickname {
+      min-height: 42px;
+      font-size: 20px;
+      margin-bottom: 20px;
+      font-weight: bold; }
+  .bingo .action {
+    position: absolute;
+    top: 370px;
+    left: 330px; }
+  .bingo .guy img {
+    width: 250px;
+    height: 250px;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    border-radius: 250px 250px 250px 250px; }
+
+.result {
+  background-color: wheat;
+  color: #bf191d;
+  overflow-y: auto; }
+  .result hr {
+    border-color: #bf191d; }
+  .result h4 {
+    text-align: center; }
+  .result ul li {
+    height: 60px;
+    line-height: 60px; }
+    .result ul li i {
+      color: #bf191d; }
+  .result .action {
+    position: absolute;
+    top: 370px;
+    left: 160px; }
+  .result div.name {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center; }
+
+.users {
+  margin-top: 30px; }
+  .users span.name {
+    color: white; }
+  .users h4 {
+    color: white; }
+  .users kbd {
+    color: white;
+    background-color: #bf191d; }
+  .users ul {
+    margin-top: 10px; }
+  .users li {
+    height: 30px; }
+    .users li a i {
+      font-size: 12px;
+      color: white; }
+
+/*# sourceMappingURL=main.css.map */

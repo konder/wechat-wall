@@ -41,7 +41,7 @@ define(['config', 'jquery'], function (config, $) {
             },
             reset: function () {
                 $.each(dataSource.getLuckGuys(), function (i, e) {
-                    dataSource.add(e);
+                    dataSource.addBlackGuy(e);
                 });
                 dataSource.clearLuckyGuy();
             }

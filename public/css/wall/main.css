@@ -1,0 +1,18 @@
+/*$progress-bg:                 #f5f5f5;*/
+.messages li {
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px #f5bc6e;
+  background-color: #FDEBEC;
+  color: #bf191d; }
+  .messages li p {
+    font-size: 40px; }
+  .messages li .name {
+    font-size: 20px; }
+  .messages li .guy img {
+    width: 120px;
+    height: 120px;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    border-radius: 120px 120px 120px 120px; }
+
+/*# sourceMappingURL=main.css.map */

@@ -7,7 +7,7 @@ define(['config', 'jquery'
         return {
             draw: function (data) {
                 $.each(data, function (i, e) {
-                    var userid = e.userid.replace('@', '_');
+                    var userid = e.userid || e.id;
                     var avatar = e.author.avatar || 'avatar/default.png';
                     var name = e.author.name || e.userid;
                     $.each($el.find('li'), function(i, e){
