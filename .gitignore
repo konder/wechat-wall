@@ -12,7 +12,8 @@ tmp/
 local.properties
 .settings/
 .loadpath
-
+.sass-cache/
+bower_components/
 # Eclipse Core
 .project
 
